@@ -1,0 +1,26 @@
+{% extends "track/base.html" %}
+{% block title %}Genre{% endblock %}
+
+{% block track_content %}
+
+	<b>Search: <b>
+	<form method="post">
+	{% csrf_token %}
+
+		<input type="text" name="genreName" />
+		<input type="submit" value="Submit" />
+	</form>
+
+	<ol>
+	{% for genre in genre %}
+
+		<li>{{ genre.genreName }}</li>
+	{% endfor %}
+		
+	</ol>
+
+{% endblock %}
+
+
+
+

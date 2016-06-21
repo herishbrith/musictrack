@@ -1,0 +1,20 @@
+{% extends "track/base.html" %}
+{% block title %}Add Track{% endblock %}
+
+{% block track_content %}
+
+	<form method="post">
+	{% csrf_token %}
+
+		<b>{{ message }}</b><hr>
+		<b>Title: </b>{{ trackForm.trackTitle }}<br>
+		<b>Genre: </b>{{ trackForm.trackGenre }}<br>
+		<b>Rating: </b>{{ trackForm.trackRating }}<br>
+		<input type="submit" value="Submit" />
+	</form>
+
+{% endblock %}
+
+
+
+

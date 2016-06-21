@@ -1,0 +1,31 @@
+{% extends "track/base.html" %}
+{% block title %}Tracks{% endblock %}
+
+{% block track_content %}
+
+	<b>Search: <b>
+	<form method="post">
+	{% csrf_token %}
+
+		<b>Title: <b><input type="text" name="trackTitle" /><br>
+		<b>Genre: <b><input type="text" name="genre" /><br>
+		<input type="submit" value="Submit" />
+	</form>
+		
+
+	<ol>
+	{% for track in tracks %}
+
+		<li><b>Title: </b>{{ track.trackTitle }}</li>
+		<ul>
+			<li><b>Genre: </b>{{ track.trackGenre.genreName }}</li>
+			<li><b>Rating: </b>{{ track.trackRating }}</li><br>
+		</ul>
+	{% endfor %}
+	</ol>
+
+{% endblock %}
+
+
+
+

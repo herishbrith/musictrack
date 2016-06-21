@@ -1,0 +1,18 @@
+{% extends "track/base.html" %}
+{% block title %}Add Genre{% endblock %}
+
+{% block track_content %}
+
+	<form method="post">
+	{% csrf_token %}
+
+		<b>{{ message }}</b><hr>
+		<b>Genre: </b>{{ genreForm.genreName }}
+		<input type="submit" value="Add" />
+	</form>
+
+{% endblock %}
+
+
+
+
